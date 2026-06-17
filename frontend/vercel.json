@@ -6,6 +6,6 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "env": {
-    "VITE_API_URL": "@jobhub_api_url"
+    "VITE_API_URL": "https://jobhub-b1au.onrender.com"
   }
 }
