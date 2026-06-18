@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, DollarSign, Users, Wifi } from "lucide-react";
+import { MapPin, Clock, Users, Wifi } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Job } from "../../types";
 import { formatSalary, timeAgo, getJobTypeColor } from "../../utils";
@@ -55,8 +55,7 @@ export default function JobCard({ job, delay = 0, showApplicants = false }: JobC
               {job.location}
             </span>
             <span className="flex items-center gap-1">
-              <DollarSign className="w-3.5 h-3.5" />
-              {formatSalary(job.salary_min, job.salary_max, job.salary_currency)}
+             {formatSalary(job.salary_min, job.salary_max, job.salary_currency)}
             </span>
             {showApplicants && (
               <span className="flex items-center gap-1">

@@ -1,6 +1,6 @@
 import type { ApplicationStatus, JobType } from "../types";
 
-export function formatSalary(min?: number, max?: number, currency = "USD"): string {
+export function formatSalary(min?: number, max?: number, currency = "INR",): string {
   if (!min && !max) return "Salary not disclosed";
   const fmt = (n: number) =>
     new Intl.NumberFormat("en-US", {

@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import {
-  MapPin, DollarSign, Clock, Users, Wifi,
+  MapPin, Clock, Users, Wifi,
   ArrowLeft, CheckCircle, Building2,
 } from "lucide-react";
 import toast from "react-hot-toast";
@@ -100,7 +100,7 @@ export default function JobDetailPage() {
               </div>
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-500 dark:text-dark-text mb-4">
                 <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" />{job.location}</span>
-                <span className="flex items-center gap-1.5"><DollarSign className="w-4 h-4" />{formatSalary(job.salary_min, job.salary_max, job.salary_currency)}</span>
+                <span className="flex items-center gap-1.5">{formatSalary(job.salary_min, job.salary_max, job.salary_currency)}</span>
                 <span className="flex items-center gap-1.5"><Users className="w-4 h-4" />{job.applicant_count} applicants</span>
                 <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />Posted {timeAgo(job.created_at)}</span>
                 {job.is_remote && <span className="flex items-center gap-1.5 text-teal-600 dark:text-teal-400"><Wifi className="w-4 h-4" />Remote</span>}
@@ -148,7 +148,7 @@ export default function JobDetailPage() {
 
           {/* Sidebar */}
           <div className="space-y-5">
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="card p-5 sticky top-24">
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }} className="card p-5 top-24">
               <Button onClick={handleApply} disabled={!job.is_active} className="w-full mb-3" size="lg">
                 {job.is_active ? "Apply Now" : "Position Closed"}
               </Button>
